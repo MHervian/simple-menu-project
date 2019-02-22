@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Simple Animasi Manual
+    </title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="aksiAnim">Buka</button>
+    <!--button id="tutupAnim">Tutup</button-->
+    <div id="animDiv" class="el">
+      <ul>
+        <li>Menu 1</li>
+        <li>Menu 2</li>
+        <li>Menu 3</li>
+        <li>Menu 4</li>
+        <li>Menu 5</li>
+        <li>Menu 6</li>
+        <li>Menu 7</li>
+      </ul>
+    </div>
+    <h4>Text-align: center</h4>
+    <div class="el2">
+      Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya.
+    </div>
+    <h4>Text-align-last: center</h4>
+    <div class="el3">
+      Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya.
+    </div>
+    <h4>Text-align: justify &amp; Text-align-last: center</h4>
+    <div class="el4">
+      Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya. Ini adalah teks yang disempurnakan untuk ejaannya dan
+      makna katanya.
+    </div>
+  </body>
+  <script>
+    // fungsi untuk tombol mengaktifkan animasi
+    /*function buka() {
+      var obj = document.getElementById('animDiv');
+      obj.classList.remove('tutup');
+      obj.classList.add('buka');
+      document.getElementById('tutupAnim').style.display = 'block';
+      document.getElementById('aksiAnim').style.display = 'none';
+    }
+
+    function tutup() {
+      var obj = document.getElementById('animDiv');
+      obj.classList.remove('buka');
+      obj.classList.add('tutup');
+      document.getElementById('tutupAnim').style.display = 'none';
+      document.getElementById('aksiAnim').style.display = 'block';
+    }
+*/
+    var val = 0; // status elemen
+    function animasi() {
+      var obj = document.getElementById('animDiv');
+      if(val) {
+        obj.classList.remove('buka');
+        obj.classList.add('tutup');
+        document.getElementById('aksiAnim').innerHTML = "Buka";
+        val = 0; //set ke 0 untuk mati
+      }
+      else {
+        obj.classList.remove('tutup');
+        obj.classList.add('buka');
+        document.getElementById('aksiAnim').innerHTML = "Tutup";
+        val = 1; //set ke 1 untuk aktif
+      }
+    }
+
+    document.getElementById('aksiAnim').addEventListener(
+      'click',animasi
+    );
+
+    /*
+    document.getElementById('tutupAnim').addEventListener(
+      'click',tutup
+    );*/
+  </script>
+</html>
